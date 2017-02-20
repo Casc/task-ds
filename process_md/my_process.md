@@ -165,9 +165,6 @@ I've also looked at some data from students that are not  guided by teachers ("i
 
 There was also built another dictionary which helps to see how many units are done by each student (student_and_unit).
 
-// average units from student from each country, 
-
-
 
 ```python
 import matplotlib.pyplot as plt
@@ -504,7 +501,7 @@ plt.show()
 ![png](output_23_3.png)
 
 
-At this point some small conclusions can be already made. The supervision factor (teacher participation in course) works for Turkey students very well, but this is an exception - there are many countries with bigger (or similar) "supervision rate", that have much smaller average number of units done. Also, there is Italy, with lowest teachers rate and still very high average number of units. Generally, it shows that there are differences between countries, but it would be very hard to find the dependancy between those two values.
+At this point some small conclusions can be already made. The supervision factor (teacher participation in course) works for Turkey students very well, but this is an exception - there are many countries with bigger (or similar) "supervision rate", that have much smaller average number of units done. Also, there is Italy, with lowest teachers rate and still very high average number of units. Generally, it shows that there are differences between countries, but it would be very hard to find the correlation of these two values.
 
 
 Now lets explore how variables like completion, average score and "freedom rate" (inv_rate) are connected to the specific units - the best way to represent data like this is probably using the scatter plots.
@@ -512,7 +509,6 @@ Now lets explore how variables like completion, average score and "freedom rate"
 
 ```python
 import numpy as np
-import seaborn as sns
 
 unit_ids = {}
 i = 1
@@ -636,7 +632,7 @@ for i in range(1, 18):
 ![png](output_25_16.png)
 
 
-As we can see on these (not so perfect) histgrams, it appears that unit completions drops gradually until the unit 10, where drop becomes more significant, especially in comparison to completion of Review 3. It may be the signal that something bad happens there - students apparently start the unit 10, but they are having big problems with completing it. One of the possible reasons for this can be teachers - they have not enough time to go through the whole course with their class, so they do as much as possible (9 units and reviews), and then stop - that would explain the reason why students are much less likely to complete next three units. However, the completion is a metric of engagement, but average_score is the metric that can be much more revaling, and we can present it in a very similar way.
+As we can see on these (not so perfect) histograms, it appears that unit completions drops gradually until the unit 10, where drop becomes more significant, especially in comparison to completion of Review 3. It may be the signal that something bad happens there - students apparently start the unit 10, but they are having big problems with completing it. One of the possible reasons for this can be teachers - they have not enough time to go through the whole course with their class, so they do as much as possible (9 units and reviews), and then stop - that would explain the reason why students are much less likely to complete next three units. However, the completion is a metric of engagement, but average_score is the metric that can be much more revaling, and we can present it in a very similar way.
 
 
 ```python
@@ -728,7 +724,7 @@ for i in range(1, 18):
 ![png](output_27_16.png)
 
 
-It looks like while at the beginning of the course it is harder for students to achieve top scores from unit, however after few units, the % of the students who achieve the best possible score starts growing. Of course it is connected with the fact, that total number of students is dropping, and it is not a surprise, that students who decide to continue course are the ones with better scores. Also the % of students having problems grows from unit to unit, epsecially after 9th unit (so it would be a good idea to compare it with completion rate). Unfortunately, the time is running, and I still want to check some other things, like inv_rate by unit.
+It looks like while at the beginning of the course it is harder for students to achieve top scores from unit, however after few units, the % of the students who achieve the best possible score starts growing. Of course it is connected with the fact, that total number of students is dropping, and it is not a surprise, that students who decide to continue course are the ones with better scores. Also the % of students having problems grows from unit to unit, especially after 9th unit (so it would be a good idea to compare it with completion rate). Unfortunately, the time is running, and I still want to check some other things, like inv_rate by unit.
 
 
 ```python
